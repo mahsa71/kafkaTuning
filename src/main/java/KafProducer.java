@@ -38,7 +38,6 @@ public class KafProducer {
     }
     public static KafkaProducer<String, String> createKafkaProducer(String bootstrapServers){
 
-
         // create Producer properties
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);

@@ -7,12 +7,12 @@ import java.util.Properties;
 /*
 This class can be used to read message from other programs via send_mesage method
  */
-public class kafProducer {
+public class KafProducer {
 
 
     String bootStrapServer = "";//node2:9092
     private KafkaProducer<String, String> producer;
-    public kafProducer(String bootStrapServer){
+    public KafProducer(String bootStrapServer){
         this.bootStrapServer = bootStrapServer;
         initialize(bootStrapServer);
     }

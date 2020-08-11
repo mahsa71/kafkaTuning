@@ -24,7 +24,7 @@ This class is a multi thread consumer to read messages from kafka and measure:
 You change the number of threads with numOfThread
  */
 
-public class KafConsumer {
+public class KafkConsumer {
     private static long T0;
     private static long T1;
     private  String bootstrapServer ="";
@@ -35,7 +35,7 @@ public class KafConsumer {
 
 
 
-    public KafConsumer(){
+    public KafkConsumer(){
         this.bootstrapServer = "node2:9092"; // Change to IP:9092 OR Host:9092
         this.groupId ="a28"; // Change your group ID
         this.topic = "corona"; // Change Your topic name
@@ -43,7 +43,7 @@ public class KafConsumer {
         this.numOfThread = 1;
 
     }
-    public KafConsumer(String bootstrapServer, String groupId,String topic, int numOfThread ) {
+    public KafkConsumer(String bootstrapServer, String groupId, String topic, int numOfThread ) {
         this.bootstrapServer = bootstrapServer;
         this.groupId =groupId;
         this.topic = topic;
@@ -55,14 +55,14 @@ public class KafConsumer {
 
     public static void main(String[] args) {
         T0 = System.currentTimeMillis();
-        new KafConsumer().run();
+        new KafkConsumer().run();
     }
     //***************************************************************************
     //***************************************************************************
 
     private void run() {
 
-         Logger logger = LoggerFactory.getLogger(KafConsumer.class.getName());
+         Logger logger = LoggerFactory.getLogger(KafkConsumer.class.getName());
 
          // latch for dealing with multiple threads
         CountDownLatch latch = new CountDownLatch(numOfThread);
